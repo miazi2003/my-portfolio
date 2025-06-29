@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+.bg-primary {
+  background-color: #282c33;
+}
+.active{
+  color: white;
+}
