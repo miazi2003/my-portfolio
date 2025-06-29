@@ -20,7 +20,7 @@ const AboutMe = () => {
         </h2>
 
         {/* Description */}
-        <p className="text-gray-400 text-lg text-justify ">
+        <p className="text-gray-400 text-lg text-justify font-sec">
           I’m a web developer with a strong focus on building beautiful and
           interactive user interfaces. I’ve practiced frontend development for
           about a year, constantly improving my skills in modern web

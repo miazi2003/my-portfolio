@@ -83,10 +83,10 @@ const Project = () => {
               {/* Project Details */}
               <div className="md:w-1/2 p-6 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-3xl font-semibold text-[#9f65b3] mb-4">
+                  <h3 className="text-3xl font-semibold text-[#9f65b3] mb-4 font">
                     {project.name}
                   </h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
+                  <p className="text-gray-300 mb-4 font-sec">{project.description}</p>
 
                   <ul className="text-gray-400 list-disc list-inside space-y-2 mb-6">
                     {project.features.map((feature, i) => (

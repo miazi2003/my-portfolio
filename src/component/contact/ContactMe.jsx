@@ -62,10 +62,10 @@ const ContactMe = () => {
         <div className="flex flex-col md:flex-row gap-12">
           {/* Contact Info */}
           <div className="md:w-1/2 space-y-8 text-gray-300 md:text-2xl text-xl p-8 rounded-lg border-2 border-gray-600 ">
-            <p><span className="text-[#9f65b3] font-semibold">Name:</span> Yeasin Miazi</p>
-            <p><span className="text-[#9f65b3] font-semibold">Address:</span> Dhaka, Bangladesh</p>
-            <p><span className="text-[#9f65b3] font-semibold">Phone:</span> +88001608072719</p>
-            <p><span className="text-[#9f65b3] font-semibold">Email:</span> yeasinmiazi1997@gmail.com</p>
+            <p><span className="text-[#9f65b3] font-semibold font-sec">Name:</span> Yeasin Miazi</p>
+            <p><span className="text-[#9f65b3] font-semibold font-sec">Address:</span> Dhaka, Bangladesh</p>
+            <p><span className="text-[#9f65b3] font-semibold font-sec">Phone:</span> +8801608072719</p>
+            <p><span className="text-[#9f65b3] font-semibold font-sec">Email:</span> yeasinmiazi1997@gmail.com</p>
             <div className="flex gap-4 mt-4">
               <a
                 href="https://github.com/miazi2003"

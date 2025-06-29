@@ -8,8 +8,8 @@ const Banner = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
         {/* Left side */}
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Yeasin Miazi</h1>
-          <p className="text-lg md:text-xl mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 font">Yeasin Miazi</h1>
+          <p className="text-lg md:text-xl mb-6 font-sec">
             Frontend Developer crafting clean and modern web experiences
           </p>
 
