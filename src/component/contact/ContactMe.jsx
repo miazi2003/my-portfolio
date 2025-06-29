@@ -61,7 +61,7 @@ const ContactMe = () => {
 
         <div className="flex flex-col md:flex-row gap-12">
           {/* Contact Info */}
-          <div className="md:w-1/2 space-y-8 text-gray-300 text-2xl  p-8 rounded-lg border-2 border-gray-600 ">
+          <div className="md:w-1/2 space-y-8 text-gray-300 md:text-2xl text-xl p-8 rounded-lg border-2 border-gray-600 ">
             <p><span className="text-[#9f65b3] font-semibold">Name:</span> Yeasin Miazi</p>
             <p><span className="text-[#9f65b3] font-semibold">Address:</span> Dhaka, Bangladesh</p>
             <p><span className="text-[#9f65b3] font-semibold">Phone:</span> +88001608072719</p>
