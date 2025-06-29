@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import yeasinImg from "../../../assets/yeasin.png";
+import { Link } from "react-router";
 const Banner = () => {
   return (
     <div id="home" className="w-full bg-[#282c33] text-white pt-24 px-4">
@@ -41,7 +42,7 @@ const Banner = () => {
           </div>
 
           {/* Resume button */}
-          <button className="btn border-[#9f65b3] bg-primary text-white shadow-none hover:shadow-md hover:shadow-white">Download Resume</button>
+<a href="https://drive.google.com/file/d/1kpUClIHr1Vyr49obBT1y9FGySepuCkR6/view?usp=sharing" target="blank"> <button className="btn border-[#9f65b3] bg-primary text-white shadow-none hover:shadow-md hover:shadow-white">Download Resume</button></a>
         </div>
 
         {/* Right side */}
