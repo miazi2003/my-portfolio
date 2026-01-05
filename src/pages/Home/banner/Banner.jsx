@@ -42,7 +42,7 @@ const Banner = () => {
           </div>
 
           {/* Resume button */}
-<a href="https://drive.google.com/file/d/1kpUClIHr1Vyr49obBT1y9FGySepuCkR6/view?usp=sharing" target="blank"> <button className="btn border-[#9f65b3] bg-primary text-white shadow-none hover:shadow-md hover:shadow-white">Download Resume</button></a>
+<a href="https://drive.google.com/file/d/1bXyd-LEMP_FjDUvpOV2IO1wPpokVcOtn/view?usp=sharing" target="blank"> <button className="btn border-[#9f65b3] bg-primary text-white shadow-none hover:shadow-md hover:shadow-white">Download Resume</button></a>
         </div>
 
         {/* Right side */}
