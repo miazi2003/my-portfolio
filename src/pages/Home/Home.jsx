@@ -7,7 +7,7 @@ import ContactMe from '../../component/contact/ContactMe';
 
 const Home = () => {
     return (
-        <div className='max-w-7xl mx-auto scroll-mt-20' id="home" >
+        <div className=' mx-auto scroll-mt-20' id="home" >
             <Banner></Banner>
             <AboutMe></AboutMe>
             <SkillSection></SkillSection>
