@@ -40,7 +40,7 @@ const AboutMe = () => {
     { icon: <FaCode />, label: "Frontend Development", color: "text-purple-500" },
     { icon: <FaLightbulb />, label: "Problem Solving", color: "text-yellow-500" },
     { icon: <FaRocket />, label: "Quick Learner", color: "text-blue-500" },
-    { icon: <FaBrain />, label: "AI Integration", color: "text-green-500" },
+    { icon: <FaBrain />, label: "Backend Deployment", color: "text-green-500" },
   ];
 
   return (
@@ -66,7 +66,7 @@ const AboutMe = () => {
         >
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-purple-500" />
-            <span className="text-sm font-medium text-purple-400 tracking-wider">
+            <span className="text-sm font-medium text-purple-400 tracking-wider ">
               INTRODUCTION
             </span>
             <div className="w-12 h-px bg-gradient-to-r from-purple-500 to-transparent" />
@@ -141,7 +141,7 @@ const AboutMe = () => {
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true }}
-                      className={`text-3xl mb-3 ${skill.color}`}
+                      className={`text-3xl mb-3 flex justify-center ${skill.color}`}
                     >
                       {skill.icon}
                     </motion.div>
