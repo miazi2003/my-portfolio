@@ -9,7 +9,7 @@ const Banner = () => {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    const text = "Frontend Developer crafting clean and modern web experiences";
+    const text = "MERN Stack Developer building fast, clean, and user-focused web experiences";
     let index = 0;
     
     const typeWriter = () => {
