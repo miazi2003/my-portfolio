@@ -4,6 +4,15 @@ import { FaExternalLinkAlt, FaGithub, FaArrowRight } from "react-icons/fa";
 
 const Project = () => {
   const projects = [
+     {
+      name: "Message Checker (for freelancers)",
+      description: "A smart message checker that helps freelancers send professional, risk-free messages with confidence.",
+      liveLink: "https://messagechecker.netlify.app/",
+      githubLink: "https://github.com/miazi2003/message-checker",
+      tech: ["React", "Tailwind" , "Javascript"],
+      category: "Tools",
+      accentColor: "from-red-400 to-blue-500",
+    },
     {
       name: "GrapeTask",
       description: "Modern task management app with drag-drop interface and team collaboration features.",
@@ -31,6 +40,7 @@ const Project = () => {
       category: "Content Platform",
       accentColor: "from-green-500 to-emerald-500",
     },
+   
   ];
 
   const containerVariants = {

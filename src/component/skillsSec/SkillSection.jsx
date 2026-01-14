@@ -20,20 +20,20 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 
 const SkillSection = () => {
   const skills = [
-    { name: "HTML", icon: <SiHtml5 />, color: "#E34F26", level: 95 },
-    { name: "CSS", icon: <SiCss3 />, color: "#1572B6", level: 90 },
+    { name: "HTML", icon: <SiHtml5 />, color: "#E34F26", level: 99 },
+    { name: "CSS", icon: <SiCss3 />, color: "#1572B6", level: 95 },
     { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E", level: 85 },
     { name: "React", icon: <SiReact />, color: "#61DAFB", level: 85 },
-    { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6", level: 75 },
-    { name: "Next.js", icon: <SiNextdotjs />, color: "#ffffff", level: 80 },
+    { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6", level: 55 },
+    { name: "Next.js", icon: <SiNextdotjs />, color: "#ffffff", level: 50 },
     { name: "Node.js", icon: <SiNodedotjs />, color: "#3C873A", level: 70 },
     { name: "Express", icon: <SiExpress />, color: "#ffffff", level: 65 },
-    { name: "MongoDB", icon: <SiMongodb />, color: "#47A248", level: 70 },
-    { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38BDF8", level: 90 },
+    { name: "MongoDB", icon: <SiMongodb />, color: "#47A248", level: 85 },
+    { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38BDF8", level: 95 },
     { name: "Framer Motion", icon: <TbBrandFramerMotion />, color: "#0055FF", level: 75 },
-    { name: "DaisyUI", icon: <SiDaisyui />, color: "#9f65b3", level: 85 },
+    { name: "DaisyUI", icon: <SiDaisyui />, color: "#9f65b3", level: 99 },
     { name: "Git", icon: <SiGit />, color: "#F05032", level: 80 },
-    { name: "GitHub", icon: <SiGithub />, color: "#ffffff", level: 85 },
+    { name: "GitHub", icon: <SiGithub />, color: "#ffffff", level: 80 },
     { name: "Firebase", icon: <SiFirebase />, color: "#FFCA28", level: 70 },
   ];
 
@@ -148,24 +148,34 @@ const SkillSection = () => {
                   {skill.name}
                 </h3>
                 
-                {/* Skill Level */}
-                <div className="mt-3">
-                  <div className="flex justify-between text-xs text-gray-500 mb-1">
-                    <span>Proficiency</span>
-                    <span>{skill.level}%</span>
-                  </div>
-                  <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
-                    <motion.div
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={progressVariants}
-                      custom={skill.level}
-                      className="h-full rounded-full"
-                      style={{ backgroundColor: skill.color }}
-                    />
-                  </div>
-                </div>
+         {/* Skill Level */}
+
+<div className="mt-3">
+  <div className="flex justify-between text-xs text-gray-500 mb-1">
+    <span>Proficiency</span>
+    <span>{skill.level}%</span>
+  </div>
+
+  <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+    <motion.div
+      initial={{ width: 0 }}
+      whileInView={{ width: `${skill.level}%` }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="
+        h-full rounded-full 
+        flex items-center justify-end pr-1
+        bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500
+      "
+    >
+      {/* Skill Label */}
+      <span className="text-[10px] text-white font-semibold whitespace-nowrap">
+        {skill.label}
+      </span>
+    </motion.div>
+  </div>
+</div>
+
               </div>
             </motion.div>
           ))}
