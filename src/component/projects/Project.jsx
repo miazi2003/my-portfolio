@@ -5,6 +5,15 @@ import { FaExternalLinkAlt, FaGithub, FaArrowRight } from "react-icons/fa";
 const Project = () => {
   const projects = [
      {
+      name: "Phedu-consult",
+      description: "PHEDU Consult is a full-stack appointment and booking web application with a modern UI and a secure, scalable backend.",
+      liveLink: "https://phedu-consult.netlify.app/",
+      githubLink: "https://github.com/miazi2003/Phedu-Consult",
+      tech: ["React", "Firebase", "Tailwind" ,  "Node JS" , "Express JS" , "Mongoose" , "Netlify" , "Vercel"],
+      category: "Appointment and Booking Platform",
+      accentColor: "from-red-500 to-pink-500",
+    },
+     {
       name: "Message Checker (for freelancers)",
       description: "A smart message checker that helps freelancers send professional, risk-free messages with confidence.",
       liveLink: "https://messagechecker.netlify.app/",
@@ -41,6 +50,7 @@ const Project = () => {
       accentColor: "from-green-500 to-emerald-500",
     },
    
+   
   ];
 
   const containerVariants = {
@@ -71,7 +81,7 @@ const Project = () => {
       }
     },
     hover: {
-      y: -15,
+      y: -6,
       scale: 1.02,
       transition: {
         type: "spring",
@@ -144,7 +154,7 @@ const Project = () => {
                 {/* Card Header with Gradient */}
                 <div className={`h-2 bg-gradient-to-r ${project.accentColor}`} />
                 
-                <div className="p-6">
+                <div className="p-6 flex flex-col justify-between h-full">
                   {/* Category Badge */}
                   <div className="flex items-center justify-between mb-4">
                     <span className="px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full">
