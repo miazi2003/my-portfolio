@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaCalendarAlt, FaTag } from "react-icons/fa";
 import { blogsData } from "../../data/blogsData";
+import Background from "../background/background";
 
 const BlogSection = () => {
   // Animation Variants
@@ -27,11 +28,7 @@ const BlogSection = () => {
     <section className="relative py-24 px-4 bg-black text-white overflow-hidden" id="blog">
       
       {/* --- Dynamic Background --- */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-[40rem] h-[40rem] bg-zinc-800/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-1/4 w-[35rem] h-[35rem] bg-white/5 rounded-full blur-[100px]" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-      </div>
+   <Background></Background>
 
       <div className="max-w-7xl mx-auto relative z-10">
         

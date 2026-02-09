@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaGithub, FaExternalLinkAlt, FaCode } from "react-icons/fa";
+import Background from "../background/background";
 
 // --- PROJECT DATA ---
 export const projectsData = [
@@ -80,11 +81,7 @@ const AllProjects = () => {
     <div className="min-h-screen bg-black text-white selection:bg-white/20 relative overflow-hidden">
       
       {/* --- Background Noise & Glow --- */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-zinc-800/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px]" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-      </div>
+       <Background></Background>
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         

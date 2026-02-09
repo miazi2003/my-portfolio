@@ -13,6 +13,7 @@ import {
   FaPaperPlane
 } from "react-icons/fa";
 import { FiUser, FiMail, FiMessageSquare } from "react-icons/fi";
+import Background from "../background/background";
 
 const ContactMe = () => {
   const [name, setName] = useState("");
@@ -134,20 +135,7 @@ const ContactMe = () => {
     <section className="relative py-24 px-4 scroll-mt-20 overflow-hidden bg-black text-white" id="contact">
       
       {/* --- Dynamic Background --- */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          variants={blobVariants}
-          animate="animate"
-          className="absolute top-1/4 left-0 w-[40rem] h-[40rem] bg-zinc-800/20 rounded-full blur-[120px] -translate-x-1/2"
-        />
-        <motion.div
-          variants={blobVariants}
-          animate="animate"
-          transition={{ duration: 12, delay: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-0 right-0 w-[35rem] h-[35rem] bg-white/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3"
-        />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-      </div>
+        <Background></Background>
 
       <div className="max-w-6xl mx-auto relative z-10">
         

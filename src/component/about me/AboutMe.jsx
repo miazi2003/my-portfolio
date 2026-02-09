@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaCode, FaLightbulb, FaRocket, FaBrain, FaGraduationCap, FaBriefcase } from "react-icons/fa";
+import Background from "../background/background";
 
 const AboutMe = () => {
   // Staggered Container Animation
@@ -49,20 +50,7 @@ const AboutMe = () => {
     <section className="relative py-24 px-4 overflow-hidden bg-black text-white scroll-mt-20" id="about">
       
       {/* --- Dynamic Animated Background --- */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          variants={blobVariants}
-          animate="animate"
-          className="absolute top-[-10%] left-[-10%] w-[35rem] h-[35rem] bg-zinc-800/20 rounded-full blur-[100px]"
-        />
-        <motion.div
-          variants={blobVariants}
-          animate="animate"
-          transition={{ duration: 10, delay: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[-10%] right-[-10%] w-[40rem] h-[40rem] bg-white/5 rounded-full blur-[120px]"
-        />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-      </div>
+      <Background></Background>
 
       <div className="max-w-7xl mx-auto relative z-10">
         

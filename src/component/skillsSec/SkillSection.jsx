@@ -18,6 +18,7 @@ import {
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaLaptopCode, FaServer, FaTools } from "react-icons/fa";
+import Background from "../background/background";
 
 const SkillSection = () => {
   // Organized Data Structure
@@ -98,20 +99,7 @@ const SkillSection = () => {
     <section className="relative py-24 px-4 scroll-mt-20 overflow-hidden bg-black text-white" id="skills">
       
       {/* --- Dynamic Background --- */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          variants={blobVariants}
-          animate="animate"
-          className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-zinc-800/20 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"
-        />
-        <motion.div
-          variants={blobVariants}
-          animate="animate"
-          transition={{ duration: 15, delay: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-0 right-0 w-[35rem] h-[35rem] bg-white/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3"
-        />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-      </div>
+      <Background></Background>
 
       <div className="max-w-7xl mx-auto relative z-10">
         

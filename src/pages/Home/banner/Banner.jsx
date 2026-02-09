@@ -16,6 +16,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import yeasinImg from "../../../assets/yeasin.png";
+import Background from "../../../component/background/background";
 
 const Banner = () => {
   const textRef = useRef(null);
@@ -73,11 +74,7 @@ const Banner = () => {
       className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden bg-black text-white"
     >
       {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-white/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-zinc-800/20 rounded-full blur-[100px]" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
-      </div>
+    <Background></Background>
 
       <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* LEFT */}
