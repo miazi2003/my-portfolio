@@ -120,7 +120,7 @@ const Banner = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
             <motion.a
-              href="/yeasin-miazi-cv-2026.pdf"
+              href="https://drive.google.com/file/d/197Txqn5jDsRTHAtuGfkcbUiqgn6PeAeZ/view?usp=sharing"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

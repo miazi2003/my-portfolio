@@ -1,5 +1,21 @@
 export const blogsData = [
   {
+  id: "building-scanivo",
+  tag: "SaaS Platform",
+  date: "2026-03-14",
+  title: "Building Scanivo: A Smart E-commerce Website Analyzer",
+  coverText: "Scanivo • React • Next.js • Node • MongoDB",
+  summary:
+    "Lessons learned from building a SaaS platform focused on analyzing e-commerce stores, automating checks, and improving store performance.",
+  content: [
+    "Scanivo is a SaaS platform built to help store owners monitor and analyze their e-commerce websites. The main focus was checking product pages, cart setup, and checkout flow to ensure stores work smoothly and efficiently.",
+    "I used React, Next.js, and Tailwind CSS on the frontend to create a modern and responsive dashboard experience. The backend uses Node.js, Express.js, and MongoDB to manage store data, subscriptions, and automated monitoring results.",
+    "One of the key features was implementing hourly automated checks using cron jobs. This helped store owners track issues in real time and maintain a better customer shopping experience without manual checking.",
+    "The project also included subscription plans and payment integration, which made the platform more practical as a real SaaS product. Building Scanivo improved my understanding of automation systems, scalable backend architecture, and product-focused development."
+  ],
+  relatedProjects: ["scanivo"],
+},
+  {
     id: "building-phedu-consult",
     tag: "Full Stack",
     date: "2026-02-09",

@@ -117,11 +117,11 @@ const Navbar = () => {
 
             {/* Resume */}
             <a
-              href="/yeasin-miazi-cv-2026.pdf"
+              href="https://drive.google.com/file/d/197Txqn5jDsRTHAtuGfkcbUiqgn6PeAeZ/view?usp=sharing"
               download
               className="flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors"
             >
-              <FaDownload className="text-xs" /> Resume
+              <FaDownload className="text-xs" /> CV Download
             </a>
           </div>
 
