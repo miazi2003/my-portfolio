@@ -93,6 +93,15 @@ const Banner = () => {
             </span>
           </h1>
 
+          <div className="flex justify-center lg:justify-start">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md select-none">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-zinc-300 font-mono">
+                Full Stack Developer
+              </span>
+            </div>
+          </div>
+
           <div className="h-16 flex justify-center lg:justify-start">
             <p className="text-lg text-zinc-400 max-w-md">
               <span ref={textRef}></span>
