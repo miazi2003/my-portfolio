@@ -111,7 +111,7 @@ const Banner = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
             <motion.a
-              href="https://drive.google.com/file/d/197Txqn5jDsRTHAtuGfkcbUiqgn6PeAeZ/view?usp=sharing"
+              href="https://drive.google.com/file/d/116H8XuN5EDoogMRVLP4U8ky7K9gdczvT/view?usp=drive_link"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
