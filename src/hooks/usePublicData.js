@@ -3,11 +3,17 @@ import { api } from "../api/axios";
 
 const fetchList = async (endpoint) => {
   const { data } = await api.get(endpoint);
+  if (!Array.isArray(data)) {
+    throw new Error(`Expected array from ${endpoint}, got: ${typeof data}`);
+  }
   return data;
 };
 
 const fetchItem = async (endpoint, id) => {
   const { data } = await api.get(`${endpoint}/${id}`);
+  if (!data || typeof data !== "object") {
+    throw new Error(`Expected object from ${endpoint}/${id}, got: ${typeof data}`);
+  }
   return data;
 };
 
