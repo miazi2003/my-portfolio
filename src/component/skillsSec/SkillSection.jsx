@@ -52,9 +52,15 @@ const categoryIconMap = {
   tools: <FaTools />,
 };
 
-const getIcon = (skill) => iconMap[(skill.icon || skill.name || "").toLowerCase()] || <FaTools />;
+const getIcon = (skill) => {
+  const iconOrName = skill?.icon || skill?.name || "";
+  const key = typeof iconOrName === "string" ? iconOrName.toLowerCase() : String(iconOrName).toLowerCase();
+  return iconMap[key] || <FaTools />;
+};
+
 const getCategoryIcon = (title) => {
-  const key = Object.keys(categoryIconMap).find((item) => title.toLowerCase().includes(item));
+  const titleStr = typeof title === "string" ? title : String(title || "");
+  const key = Object.keys(categoryIconMap).find((item) => titleStr.toLowerCase().includes(item));
   return categoryIconMap[key] || <FaTools />;
 };
 
