@@ -20,8 +20,43 @@ const ProjectDetails = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        Loading project...
+      <div className="min-h-screen bg-black text-white selection:bg-white/20">
+        <div className="max-w-5xl mx-auto px-6 py-20 animate-pulse space-y-12">
+          <div className="h-6 bg-zinc-800/50 rounded w-32" />
+          
+          <div className="space-y-4">
+            <div className="flex gap-2">
+              <div className="h-6 bg-zinc-800/50 rounded-full w-24" />
+              <div className="h-6 bg-zinc-800/50 rounded-full w-32" />
+            </div>
+            <div className="h-14 bg-zinc-800/50 rounded w-2/3" />
+            <div className="h-6 bg-zinc-800/50 rounded w-1/2" />
+          </div>
+
+          <div className="flex gap-4">
+            <div className="h-12 bg-zinc-800/50 rounded-lg w-32" />
+            <div className="h-12 bg-zinc-800/50 rounded-lg w-32" />
+          </div>
+
+          <div className="aspect-video bg-zinc-800/50 rounded-2xl w-full" />
+
+          <div className="grid md:grid-cols-3 gap-12 pt-6">
+            <div className="md:col-span-2 space-y-8">
+              <div className="space-y-3">
+                <div className="h-6 bg-zinc-800/50 rounded w-48" />
+                <div className="h-24 bg-zinc-800/50 rounded-2xl w-full" />
+              </div>
+              <div className="space-y-3">
+                <div className="h-6 bg-zinc-800/50 rounded w-36" />
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="h-16 bg-zinc-800/50 rounded-xl" />
+                  <div className="h-16 bg-zinc-800/50 rounded-xl" />
+                </div>
+              </div>
+            </div>
+            <div className="h-48 bg-zinc-800/50 rounded-2xl w-full" />
+          </div>
+        </div>
       </div>
     );
   }

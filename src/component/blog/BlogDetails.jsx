@@ -9,7 +9,18 @@ const BlogDetails = () => {
   if (isLoading) {
     return (
       <section className="min-h-screen bg-black text-white px-4 py-24">
-        <div className="max-w-3xl mx-auto">Loading article...</div>
+        <div className="max-w-3xl mx-auto animate-pulse space-y-8">
+          <div className="h-6 bg-zinc-800/50 rounded w-24 mb-10" />
+          <div className="h-4 bg-zinc-800/50 rounded w-32" />
+          <div className="h-10 bg-zinc-800/50 rounded w-full" />
+          <div className="h-10 bg-zinc-800/50 rounded w-3/4" />
+          <div className="space-y-4 pt-10">
+            <div className="h-4 bg-zinc-800/50 rounded w-full" />
+            <div className="h-4 bg-zinc-800/50 rounded w-11/12" />
+            <div className="h-4 bg-zinc-800/50 rounded w-full" />
+            <div className="h-4 bg-zinc-800/50 rounded w-5/6" />
+          </div>
+        </div>
       </section>
     );
   }

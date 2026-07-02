@@ -133,76 +133,103 @@ const SkillSection = () => {
           </p>
         </motion.div>
 
-        {isLoading && <p className="text-center text-zinc-400">Loading skills...</p>}
+        {isLoading && (
+          <div className="space-y-20 animate-pulse">
+            {[1, 2].map((cat) => (
+              <div key={cat} className="space-y-8">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-zinc-800/50" />
+                  <div className="space-y-2">
+                    <div className="h-6 bg-zinc-800/50 rounded w-48" />
+                    <div className="h-4 bg-zinc-800/50 rounded w-96 max-w-full" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {[1, 2, 3, 4].map((s) => (
+                    <div key={s} className="bg-zinc-900/30 border border-white/5 rounded-2xl p-6 space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-zinc-800/50" />
+                        <div className="h-4 bg-zinc-800/50 rounded w-16" />
+                      </div>
+                      <div className="w-full bg-zinc-800/50 rounded-full h-1" />
+                      <div className="flex justify-end">
+                        <div className="h-3 bg-zinc-800/50 rounded w-6" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
         {isError && <p className="text-center text-red-300">Failed to load skills.</p>}
 
-        <div className="space-y-20">
-          {skillCategories.map((category, catIndex) => (
-            <div key={category.title}>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-                className="flex items-center gap-4 mb-8"
-              >
-                <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300">
-                  {category.icon}
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
-                  <p className="text-sm text-zinc-500">{category.description}</p>
-                </div>
-              </motion.div>
+        {!isLoading && !isError && (
+          <div className="space-y-20">
+            {skillCategories.map((category, catIndex) => (
+              <div key={category.title}>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+                  className="flex items-center gap-4 mb-8"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300">
+                    {category.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                    <p className="text-xs text-zinc-500 uppercase tracking-widest mt-1">
+                      {category.description}
+                    </p>
+                  </div>
+                </motion.div>
 
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-              >
-                {category.skills.map((skill) => (
-                  <motion.div
-                    key={skill._id || skill.name}
-                    variants={itemVariants}
-                    whileHover={{ y: -5 }}
-                    className="group relative bg-zinc-900/40 backdrop-blur-md border border-white/5 rounded-xl p-5 hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
-                  >
-                    <div className="flex flex-col items-center gap-4 mb-3">
-                      <div
-                        className="text-4xl text-zinc-500 transition-all duration-300 group-hover:scale-110 filter grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
-                        style={{ color: "inherit" }}
-                      >
-                        <span style={{ color: skill.color }} className="hidden group-hover:inline">
-                          {skill.icon}
-                        </span>
-                        <span className="inline group-hover:hidden">{skill.icon}</span>
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                >
+                  {category.skills.map((skill) => (
+                    <motion.div
+                      key={skill._id}
+                      variants={itemVariants}
+                      whileHover={{ y: -5, borderColor: "rgba(255,255,255,0.2)" }}
+                      className="group bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_10px_30px_rgba(255,255,255,0.02)]"
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:bg-white group-hover:text-black transition-all duration-300">
+                          <span className="inline group-hover:hidden">{getIcon(skill)}</span>
+                          <span className="hidden group-hover:inline">{getIcon(skill)}</span>
+                        </div>
+
+                        <h4 className="font-medium text-zinc-300 group-hover:text-white transition-colors text-sm">
+                          {skill.name}
+                        </h4>
                       </div>
 
-                      <h4 className="font-medium text-zinc-300 group-hover:text-white transition-colors text-sm">
-                        {skill.name}
-                      </h4>
-                    </div>
-
-                    <div className="w-full bg-zinc-800 rounded-full h-1 mt-2 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="h-full bg-white/80 group-hover:bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-colors"
-                      />
-                    </div>
-                    <div className="flex justify-end mt-1">
-                      <span className="text-[10px] text-zinc-600 font-mono">{skill.level}%</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          ))}
-        </div>
+                      <div className="w-full bg-zinc-800 rounded-full h-1 mt-2 overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: 0.2 }}
+                          className="h-full bg-white/80 group-hover:bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-colors"
+                        />
+                      </div>
+                      <div className="flex justify-end mt-1">
+                        <span className="text-[10px] text-zinc-600 font-mono">{skill.level}%</span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

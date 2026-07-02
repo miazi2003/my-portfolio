@@ -59,82 +59,104 @@ const AllProjects = () => {
           </motion.div>
         </div>
 
-        {isLoading && <p className="text-zinc-400">Loading projects...</p>}
+        {isLoading && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <div key={n} className="animate-pulse flex flex-col bg-zinc-900/30 border border-white/5 rounded-2xl overflow-hidden">
+                <div className="aspect-[16/10] bg-zinc-800/50" />
+                <div className="p-6 flex flex-col flex-grow space-y-4">
+                  <div className="h-6 bg-zinc-800/50 rounded w-2/3" />
+                  <div className="space-y-2">
+                    <div className="h-4 bg-zinc-800/50 rounded w-full" />
+                    <div className="h-4 bg-zinc-800/50 rounded w-5/6" />
+                  </div>
+                  <div className="flex gap-2 pt-4">
+                    <div className="h-4 bg-zinc-800/50 rounded w-10" />
+                    <div className="h-4 bg-zinc-800/50 rounded w-12" />
+                  </div>
+                  <div className="h-6 bg-zinc-800/50 rounded-lg w-full mt-auto" />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
         {isError && <p className="text-red-300">Failed to load projects.</p>}
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {projectsData.map((project) => (
-            <motion.div
-              key={project._id || project.id}
-              variants={cardVariants}
-              className="group flex flex-col bg-zinc-900/30 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]"
-            >
-              {/* Thumbnail Image Container */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-zinc-950 border-b border-white/5">
-                {project.thumbnail ? (
-                  <img
-                    src={project.thumbnail}
-                    alt={project.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-zinc-600 font-mono text-xs uppercase tracking-wider">
-                    No Image Available
+        {!isLoading && !isError && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {projectsData.map((project) => (
+              <motion.div
+                key={project._id || project.id}
+                variants={cardVariants}
+                className="group flex flex-col bg-zinc-900/30 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]"
+              >
+                {/* Thumbnail Image Container */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-zinc-950 border-b border-white/5">
+                  {project.thumbnail ? (
+                    <img
+                      src={project.thumbnail}
+                      alt={project.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-zinc-600 font-mono text-xs uppercase tracking-wider">
+                      No Image Available
+                    </div>
+                  )}
+                  {/* Floating Category Tag */}
+                  <span className="absolute top-4 left-4 px-3 py-1 text-xs font-medium text-zinc-300 bg-black/60 backdrop-blur-md border border-white/10 rounded-full z-10">
+                    {project.category}
+                  </span>
+                </div>
+
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="mb-6">
+                    <h2 className="text-xl font-bold text-white mb-2 group-hover:text-zinc-200 transition-colors">
+                      {project.name}
+                    </h2>
+                    <p className="text-sm text-zinc-400 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
                   </div>
-                )}
-                {/* Floating Category Tag */}
-                <span className="absolute top-4 left-4 px-3 py-1 text-xs font-medium text-zinc-300 bg-black/60 backdrop-blur-md border border-white/10 rounded-full z-10">
-                  {project.category}
-                </span>
-              </div>
 
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="mb-6">
-                  <h2 className="text-xl font-bold text-white mb-2 group-hover:text-zinc-200 transition-colors">
-                    {project.name}
-                  </h2>
-                  <p className="text-sm text-zinc-400 leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
-                </div>
+                  <div className="mt-auto mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {getTech(project).map((t) => (
+                        <span key={t} className="text-[10px] uppercase tracking-wider text-zinc-500 border border-zinc-800 px-2 py-1 rounded">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
-                <div className="mt-auto mb-6">
-                  <div className="flex flex-wrap gap-2">
-                    {getTech(project).map((t) => (
-                      <span key={t} className="text-[10px] uppercase tracking-wider text-zinc-500 border border-zinc-800 px-2 py-1 rounded">
-                        {t}
-                      </span>
-                    ))}
+                  <div className="flex items-center gap-4 pt-4 border-t border-white/5">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-medium text-zinc-300 hover:text-white transition-colors"
+                    >
+                      <FaExternalLinkAlt className="text-xs" /> Live Demo
+                    </a>
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-medium text-zinc-300 hover:text-white transition-colors"
+                    >
+                      <FaGithub /> Source Code
+                    </a>
                   </div>
                 </div>
-
-                <div className="flex items-center gap-4 pt-4 border-t border-white/5">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium text-zinc-300 hover:text-white transition-colors"
-                  >
-                    <FaExternalLinkAlt className="text-xs" /> Live Demo
-                  </a>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium text-zinc-300 hover:text-white transition-colors"
-                  >
-                    <FaGithub /> Source Code
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0 }}

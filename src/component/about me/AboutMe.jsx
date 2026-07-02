@@ -132,20 +132,32 @@ const AboutMe = () => {
                             <FaBriefcase className="text-lg" />
                         </div>
                     </div>
-                    <div className="space-y-3">
-                      
-                        <div>
+                    <div className="space-y-3 w-full">
+                      {experienceLoading ? (
+                        <div className="animate-pulse space-y-3">
+                          <div className="h-6 bg-zinc-800/50 rounded w-36" />
+                          <div className="h-4 bg-zinc-800/50 rounded w-24" />
+                          <div className="space-y-2 pt-2">
+                            <div className="h-4 bg-zinc-800/50 rounded w-full" />
+                            <div className="h-4 bg-zinc-800/50 rounded w-5/6" />
+                          </div>
+                        </div>
+                      ) : (
+                        <>
+                          <div>
                             <h3 className="text-xl font-bold text-white leading-tight">
-                                {experienceLoading ? "Loading..." : experience[0]?.role || "Experience"}
+                              {experience[0]?.role || "Experience"}
                             </h3>
                             <p className="text-zinc-500 text-sm mt-1 font-medium">
-                                {experience[0]?.company || ""}
+                              {experience[0]?.company || ""}
                             </p>
-                        </div>
-                        
-                        <p className="text-zinc-400 text-sm leading-relaxed">
+                          </div>
+                          
+                          <p className="text-zinc-400 text-sm leading-relaxed">
                             {experience[0]?.description || "Experience details will be added soon."}
-                        </p>
+                          </p>
+                        </>
+                      )}
                     </div>
                 </div>
             </motion.div>
@@ -178,20 +190,31 @@ const AboutMe = () => {
                  </div>
                </div>
 
-               <div className="space-y-6">
-                  {educationLoading && <p className="text-zinc-400">Loading education...</p>}
-                  {education.map((item) => (
-                    <div key={item._id} className="relative pl-6 border-l border-white/20">
-                      <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
-                      <h4 className="text-lg font-bold text-white leading-tight">
-                        {item.institution}
-                      </h4>
-                      <p className="text-zinc-400 text-sm mt-1">
-                        {[item.degree || item.board, item.year].filter(Boolean).join(" - ")}
-                      </p>
-                    </div>
-                  ))}
-               </div>
+                <div className="space-y-6">
+                   {educationLoading ? (
+                     <div className="animate-pulse space-y-6">
+                       {[1, 2].map((n) => (
+                         <div key={n} className="relative pl-6 border-l border-white/10 space-y-2">
+                           <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-zinc-800 rounded-full" />
+                           <div className="h-5 bg-zinc-800/50 rounded w-48" />
+                           <div className="h-4 bg-zinc-800/50 rounded w-32" />
+                         </div>
+                       ))}
+                     </div>
+                   ) : (
+                     education.map((item) => (
+                       <div key={item._id} className="relative pl-6 border-l border-white/20">
+                         <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
+                         <h4 className="text-lg font-bold text-white leading-tight">
+                           {item.institution}
+                         </h4>
+                         <p className="text-zinc-400 text-sm mt-1">
+                           {[item.degree || item.board, item.year].filter(Boolean).join(" - ")}
+                         </p>
+                       </div>
+                     ))
+                   )}
+                </div>
             </motion.div>
 
             {/* 2. Skills Grid */}
