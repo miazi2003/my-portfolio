@@ -41,18 +41,26 @@ app.use("/api/blogs", blogsRouter);
 app.use("/api/messages", messagesRouter);
 app.use("/api/stats", statsRouter);
 
+// Middleware to ensure DB connection is ready on every request (crucial for serverless environments)
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.use((err, req, res, _next) => {
   console.error(err);
   res.status(500).json({ message: "Server error" });
 });
 
-connectDB()
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`Portfolio API listening on port ${port}`);
-    });
-  })
-  .catch((error) => {
-    console.error("Failed to connect to MongoDB", error);
-    process.exit(1);
+// Conditionally start listener if not running in Vercel serverless environment
+if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`Portfolio API listening on port ${port}`);
   });
+}
+
+export default app;
