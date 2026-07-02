@@ -22,7 +22,7 @@ import { useSettings } from "../../../hooks/usePublicData";
 const Banner = () => {
   const textRef = useRef(null);
   const { data: settings = [] } = useSettings();
-  const cvLink = settings.find((s) => s.key === "cvLink")?.value || "https://drive.google.com/file/d/116H8XuN5EDoogMRVLP4U8ky7K9gdczvT/view?usp=drive_link";
+  const cvLink = settings.find((s) => s.key === "cvLink")?.value;
 
   // Typing Effect
   useEffect(() => {

@@ -13,9 +13,7 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState("#home"); // logic only
 
   const { data: settings = [] } = useSettings();
-  const cvLink = settings.find((s) => s.key === "cvLink")?.value || "https://drive.google.com/file/d/197Txqn5jDsRTHAtuGfkcbUiqgn6PeAeZ/view?usp=sharing";
-
-  const navLinks = useMemo(
+  const cvLink = settings.find((s) => s.key === "cvLink")?.value ;
     () => [
       { path: "#home", label: "Home" },
       { path: "#about", label: "About" },
