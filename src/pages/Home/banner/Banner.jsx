@@ -27,7 +27,7 @@ const Banner = () => {
   // Typing Effect
   useEffect(() => {
     const text =
-      "MERN Stack Developer building fast, clean, and user-focused web experiences.";
+      "Full Stack Developer building fast, clean, and user-focused web experiences.";
     let index = 0;
     if (textRef.current) textRef.current.innerHTML = "";
 
