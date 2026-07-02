@@ -6,6 +6,7 @@ import {
   experienceFields,
   projectFields,
   skillFields,
+  settingsFields,
 } from "./adminFields";
 
 export const SkillsAdmin = () => (
@@ -26,4 +27,8 @@ export const ProjectsAdmin = () => (
 
 export const BlogsAdmin = () => (
   <ContentManager title="Blogs" endpoint="blogs" fields={blogFields} />
+);
+
+export const SettingsAdmin = () => (
+  <ContentManager title="Settings" endpoint="settings" fields={settingsFields} />
 );

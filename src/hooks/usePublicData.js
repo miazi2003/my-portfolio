@@ -60,3 +60,9 @@ export const useBlog = (id) =>
     queryFn: () => fetchItem("/blogs", id),
     enabled: Boolean(id),
   });
+
+export const useSettings = () =>
+  useQuery({
+    queryKey: ["settings"],
+    queryFn: () => fetchList("/settings"),
+  });

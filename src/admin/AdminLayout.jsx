@@ -10,6 +10,7 @@ const links = [
   { to: "/adminYeasin/dashboard/projects", label: "Projects" },
   { to: "/adminYeasin/dashboard/blogs", label: "Blogs" },
   { to: "/adminYeasin/dashboard/messages", label: "Messages" },
+  { to: "/adminYeasin/dashboard/settings", label: "Settings" },
 ];
 
 const AdminLayout = () => {

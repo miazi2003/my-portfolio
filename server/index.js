@@ -10,6 +10,7 @@ import {
   experienceRouter,
   messagesRouter,
   projectsRouter,
+  settingsRouter,
   statsRouter,
 } from "./routes/content.js";
 
@@ -39,6 +40,7 @@ app.use("/api/experience", experienceRouter);
 app.use("/api/projects", projectsRouter);
 app.use("/api/blogs", blogsRouter);
 app.use("/api/messages", messagesRouter);
+app.use("/api/settings", settingsRouter);
 app.use("/api/stats", statsRouter);
 
 // Middleware to ensure DB connection is ready on every request (crucial for serverless environments)

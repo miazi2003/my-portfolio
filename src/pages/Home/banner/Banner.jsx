@@ -17,9 +17,12 @@ import {
 } from "react-icons/si";
 import yeasinImg from "../../../assets/yeasin.png";
 import Background from "../../../component/background/Background";
+import { useSettings } from "../../../hooks/usePublicData";
 
 const Banner = () => {
   const textRef = useRef(null);
+  const { data: settings = [] } = useSettings();
+  const cvLink = settings.find((s) => s.key === "cvLink")?.value || "https://drive.google.com/file/d/116H8XuN5EDoogMRVLP4U8ky7K9gdczvT/view?usp=drive_link";
 
   // Typing Effect
   useEffect(() => {
@@ -111,7 +114,9 @@ const Banner = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
             <motion.a
-              href="https://drive.google.com/file/d/116H8XuN5EDoogMRVLP4U8ky7K9gdczvT/view?usp=drive_link"
+              href={cvLink}
+              target="_blank"
+              rel="noopener noreferrer"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

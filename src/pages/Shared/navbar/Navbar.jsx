@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaDownload, FaTimes } from "react-icons/fa";
 import { HiMenuAlt4 } from "react-icons/hi";
 import LogoOfMe from "../logo/LogoOfMe";
+import { useSettings } from "../../../hooks/usePublicData";
 
 const NAV_OFFSET = 90;
 
@@ -10,6 +11,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("#home"); // logic only
+
+  const { data: settings = [] } = useSettings();
+  const cvLink = settings.find((s) => s.key === "cvLink")?.value || "https://drive.google.com/file/d/197Txqn5jDsRTHAtuGfkcbUiqgn6PeAeZ/view?usp=sharing";
 
   const navLinks = useMemo(
     () => [
@@ -117,7 +121,9 @@ const Navbar = () => {
 
             {/* Resume */}
             <a
-              href="https://drive.google.com/file/d/197Txqn5jDsRTHAtuGfkcbUiqgn6PeAeZ/view?usp=sharing"
+              href={cvLink}
+              target="_blank"
+              rel="noopener noreferrer"
               download
               className="flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-zinc-200 transition-colors"
             >
@@ -163,7 +169,9 @@ const Navbar = () => {
               <hr className="border-white/10 my-1" />
 
               <a
-                href="/yeasin-miazi-cv-2026.pdf"
+                href={cvLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 download
                 className="flex items-center justify-center gap-2 bg-zinc-800 text-white px-4 py-3 rounded-xl text-sm font-bold hover:bg-zinc-700 transition"
               >

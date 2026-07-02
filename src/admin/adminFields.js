@@ -46,3 +46,8 @@ export const blogFields = [
   { name: "content", label: "Content Paragraphs", type: "array", placeholder: "One paragraph per line", wide: true },
   { name: "published", label: "Published", type: "boolean", defaultValue: true },
 ];
+
+export const settingsFields = [
+  { name: "key", label: "Setting Name (e.g., cvLink)", placeholder: "cvLink" },
+  { name: "value", label: "Setting Value (URL or Text)", wide: true },
+];

@@ -15,6 +15,7 @@ import {
   ExperienceAdmin,
   ProjectsAdmin,
   SkillsAdmin,
+  SettingsAdmin,
 } from "../admin/AdminContentPages";
 import MessagesAdmin from "../admin/MessagesAdmin";
 
@@ -48,6 +49,7 @@ export const router = createBrowserRouter([
           { path: "projects", Component: ProjectsAdmin },
           { path: "blogs", Component: BlogsAdmin },
           { path: "messages", Component: MessagesAdmin },
+          { path: "settings", Component: SettingsAdmin },
         ],
       },
     ],

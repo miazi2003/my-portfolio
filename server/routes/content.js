@@ -20,6 +20,10 @@ export const blogsRouter = createCrudRouter("blogs", {
   publicSort: { date: -1, createdAt: -1 },
 });
 
+export const settingsRouter = createCrudRouter("settings", {
+  publicSort: { createdAt: -1 },
+});
+
 export const messagesRouter = express.Router();
 const adminOnly = [verifyJWT, verifyAdmin];
 
