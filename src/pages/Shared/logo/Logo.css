@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.logo-text {
+  color: #cecece;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: "Audiowide", sans-serif;
+}
+
+.logo-icon {
+  margin: 0 10px;
+  color: #9f65b3;
+  font-size: 1.5rem;
+  text-shadow:
+    0 0 5px #9f65b3,
+    0 0 10px #9f65b3,
+    0 0 20px #9f65b3,
+    0 0 40px #9f65b3;
+}
